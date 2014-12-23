@@ -1,7 +1,7 @@
 Enfold
 ======
 
-This project is a demonstration of how to generate Javascript bundles dynamicamically.
+This project is a demonstration of how to generate Javascript bundles dynamically.
 
 Usage
 =====
