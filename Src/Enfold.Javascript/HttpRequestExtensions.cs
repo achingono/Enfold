@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Enfold.Configuration;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Hosting;
@@ -18,7 +19,8 @@ namespace PolicyManager.Web
         {
             var routeData = request.RequestContext.RouteData;
             // first create a list of segments that make up a path
-            var bundleName = string.Format("~/bundles/{0}/{1}/{2}",
+            var bundleName = string.Format("{0}/{1}/{2}/{3}",
+                                    Settings.Current.BundlePrefix,
                                     routeData.DataTokens["area"],
                                     routeData.Values["controller"],
                                     routeData.Values["action"]
