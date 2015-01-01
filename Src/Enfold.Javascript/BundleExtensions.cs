@@ -12,21 +12,21 @@ namespace Enfold.Javascript
     public static class BundleExtensions
     {
         /// <summary>
-        /// The file extension for Javascript files
-        /// </summary>
-        private readonly static string fileExtension = Settings.Current.ScriptExtension;                    // ".js"
-        /// <summary>
         /// The filter used when searching for javascript files
         /// </summary>
-        private readonly static string fileFilter = string.Format("*{0}", fileExtension);                   // *.js
+        private readonly static string fileFilter = string.Format("*{0}", Settings.Current.ScriptExtension);        // *.js
         /// <summary>
         /// The default file name
         /// </summary>
-        private readonly static string defaultFile = string.Format("default{0}", fileExtension);            // default.js
+        private readonly static string defaultFile = string.Format("{0}{1}", 
+                                                                    Settings.Current.DefaultScriptFileName, 
+                                                                    Settings.Current.ScriptExtension);            // default.js
         /// <summary>
         /// The file names used when generating a script bundle
         /// </summary>
-        private readonly static IEnumerable<string> scriptFileNames = new[] { string.Empty, fileExtension, string.Format("/{0}", defaultFile) };
+        private readonly static IEnumerable<string> scriptFileNames = new[] { string.Empty, 
+                                                                              Settings.Current.ScriptExtension, 
+                                                                              string.Format("/{0}", defaultFile) };
 
         /// <summary>
         /// Adds groups of Javascript files as bundles to the bundle collection
@@ -35,9 +35,9 @@ namespace Enfold.Javascript
         public static void RegisterScriptBundles(this BundleCollection bundles)
         {
             // the starting point to search for javascript files
-            var viewsPath = HostingEnvironment.MapPath(Settings.Current.ScriptPath);
+            var rootPath = HostingEnvironment.MapPath(Settings.Current.ScriptPath);
             // the list of all files in the directory tree
-            var allScripts = viewsPath.ScriptFiles();
+            var allScripts = rootPath.ScriptFiles();
 
             foreach (var script in allScripts.Where(x => !x.IsDefaultFile()))
             {

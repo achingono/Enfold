@@ -14,20 +14,15 @@ namespace PolicyManager.Web
         {
             var routeData = request.RequestContext.RouteData;
             // first create a list of segments that make up a path
-            var bundleName = string.Format("{0}/{1}/{2}/{3}",
+            return string.Format("{0}/{1}/{2}/{3}",
                                     Settings.Current.BundlePrefix,
                                     routeData.DataTokens["area"],
                                     routeData.Values["controller"],
                                     routeData.Values["action"]
                                 )
                                 .Replace("//", "/")
+                                .TrimEnd(new[] { '/' })
                                 .ToLowerInvariant();
-
-            if (bundleName.EndsWith("/"))
-            {
-                return bundleName.Substring(0, bundleName.Length - 1);
-            }
-            return bundleName;
         }
     }
 }
