@@ -188,5 +188,5 @@ GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
 
-# Nuget Packages folder
-[Pp]ackages/
+# Nuget folder
+.nuget/
