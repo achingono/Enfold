@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
     <metadata>
         <id>Enfold.Javascript</id>
-        <version>0.1.0</version>
+        <version>0.1.1</version>
         <title>Enfold.Javascript</title>
         <authors>Alfero Chingono</authors>
         <owners>Alfero Chingono</owners>
