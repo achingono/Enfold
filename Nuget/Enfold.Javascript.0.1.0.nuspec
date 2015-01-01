@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+    <metadata>
+        <id>Enfold.Javascript</id>
+        <version>0.1.0</version>
+        <title>Enfold.Javascript</title>
+        <authors>Alfero Chingono</authors>
+        <owners>Alfero Chingono</owners>
+        <projectUrl>https://github.com/achingono/Enfold</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Convention based generation of dynamic bundles</description>
+        <copyright>Copyright © Alfero Chingono</copyright>
+        <dependencies>
+            <group targetFramework=".NETFramework4.5">
+                <dependency id="Microsoft.AspNet.Web.Optimization" />
+            </group>
+        </dependencies>
+        <frameworkAssemblies>
+            <frameworkAssembly assemblyName="Microsoft.CSharp" targetFramework=".NETFramework4.5" />
+            <frameworkAssembly assemblyName="Microsoft.Web.Infrastructure" targetFramework=".NETFramework4.5" />
+            <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.5" />
+            <frameworkAssembly assemblyName="System.Configuration" targetFramework=".NETFramework4.5" />
+            <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework4.5" />
+            <frameworkAssembly assemblyName="System.Web" targetFramework=".NETFramework4.5" />
+        </frameworkAssemblies>
+        <references>
+            <group targetFramework=".NETFramework4.5" />
+        </references>
+    </metadata>
+    <files>
+        <file src="..\Src\Enfold.Javascript\bin\Release\Enfold.Javascript.dll" target="lib\net45\Enfold.Javascript.dll" />
+        <file src="..\Src\Enfold.Javascript\bin\Release\Enfold.dll" target="lib\net45\Enfold.dll" />
+    </files>
+</package>
