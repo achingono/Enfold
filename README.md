@@ -3,6 +3,13 @@ Enfold
 
 This project is a demonstration of how to generate Javascript bundles dynamically.
 
+Installation
+============
+
+```
+PM> Install-Package Enfold.Javascript
+```
+
 Usage
 =====
 
