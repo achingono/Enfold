@@ -20,7 +20,7 @@ Usage
     {
         protected void Application_Start()
         {
-            RouteTable.Routes.RegisterScriptBundles();
+            BundleTable.Bundles.RegisterScriptBundles();
         }
     }
 
