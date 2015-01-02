@@ -1,7 +1,7 @@
 ﻿using Enfold.Configuration;
 using System.Web;
 
-namespace PolicyManager.Web
+namespace Enfold.Javascript
 {
     public static class HttpRequestExtensions
     {

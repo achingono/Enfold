@@ -1,0 +1,5 @@
+<configuration>
+  <configSections>
+    <section name="enfold" type="Enfold.Configuration.Section"/>
+  </configSections>
+</configuration>
