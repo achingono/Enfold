@@ -61,3 +61,23 @@ With such a setup, the following bundles will be created:
 > >~/scripts/views/default.js  
 > >~/scripts/views/home/default.js  
 > >~/scripts/views/home/index.js  
+
+## Settings
+
+Settings can be adjusted in the `web.config` file:
+
+```xml
+<enfold scriptPath="~/Scripts/Views" scriptExtension=".js" defaultScriptFileName="default" bundlePrefix="~/bundles" />
+```
+
+### ScriptPath
+This is the path where script files are located. The code will scan this folder and generate bundles based on contents of this folder. The default value is `~/Scripts/Views`.
+
+### ScriptExtension
+This is the extension of script files to search for in the `scriptPath`.
+
+### DefaultScriptFileName
+This is the name of the file treated as a common file for all scripts in a particular hierarchy. The default value for this setting is `default`.
+
+### BundlePrefix
+This is the prefix added to all generated bundles. The default value for this setting is `~/bundles`.
