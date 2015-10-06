@@ -18,8 +18,8 @@ namespace Enfold.Javascript
         /// <summary>
         /// The default file name
         /// </summary>
-        private readonly static string defaultFile = string.Format("{0}{1}", 
-                                                                    Settings.Current.DefaultScriptFileName, 
+        private readonly static string defaultFile = string.Format("{0}{1}",
+                                                                    Settings.Current.DefaultScriptFileName,
                                                                     Settings.Current.ScriptExtension);            // default.js
         /// <summary>
         /// The file names used when generating a script bundle
@@ -63,18 +63,7 @@ namespace Enfold.Javascript
         /// <returns></returns>
         private static IEnumerable<string> ScriptFiles(this string path)
         {
-            foreach (var directoryPath in Directory.GetDirectories(path))
-            {
-                foreach (var filePath in Directory.GetFiles(directoryPath, fileFilter))
-                {
-                    yield return filePath.ToVirtualPath();
-                }
-            }
-
-            foreach (var filePath in Directory.GetFiles(path, fileFilter))
-            {
-                yield return ToVirtualPath(filePath);
-            }
+            return Directory.GetFiles(path, fileFilter, SearchOption.AllDirectories).Select(ToVirtualPath);
         }
 
         /// <summary>
