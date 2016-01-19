@@ -20,4 +20,4 @@ mkdir Build
 mkdir Build\lib
 mkdir Build\lib\net45
 
-%nuget% pack "Nuget\Enfold.nuspec" -NoPackageAnalysis -verbosity detailed -o Build -Version %version% -p Configuration="%config%"
+%nuget% pack "Nuget\Enfold.Javascript.nuspec" -NoPackageAnalysis -verbosity detailed -o Build -Version %version% -p Configuration="%config%"
