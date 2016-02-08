@@ -14,7 +14,7 @@ namespace Enfold.Javascript
         {
             var routeData = request.RequestContext.RouteData;
             // first create a list of segments that make up a path
-            return string.Format("{0}/{1}/{2}/{3}",
+            var path = string.Format("{0}/{1}/{2}/{3}",
                                     Settings.Current.BundlePrefix,
                                     routeData.DataTokens["area"],
                                     routeData.Values["controller"],
@@ -23,6 +23,12 @@ namespace Enfold.Javascript
                                 .Replace("//", "/")
                                 .TrimEnd(new[] { '/' })
                                 .ToLowerInvariant();
+            
+            if (BundleTable.Bundles.Any(b => b.Path == path))
+            {
+                return path;
+            }
+            return null;
         }
     }
 }
